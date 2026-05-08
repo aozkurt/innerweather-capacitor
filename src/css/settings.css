@@ -1,0 +1,220 @@
+.settings-overlay,
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(92, 58, 46, 0.18);
+  backdrop-filter: blur(8px);
+}
+
+.settings-overlay {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-panel,
+.modal-box {
+  background: linear-gradient(180deg, rgba(255, 248, 240, 0.99), rgba(255, 236, 214, 0.99));
+  border-top: 1px solid rgba(255, 159, 122, 0.25);
+  color: var(--text);
+  box-shadow: var(--shadow-lg);
+}
+
+.settings-panel {
+  margin: 0 14px;
+  padding: 28px 20px 24px;
+  border-radius: 0 0 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  transform: translateY(-105%);
+  transition: transform 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.settings-panel-open {
+  transform: translateY(0);
+}
+
+.notif-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 6px 2px;
+  color: var(--ink);
+}
+
+.notif-label {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.toggle {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(255, 159, 122, 0.18);
+  transition: background 0.18s ease;
+}
+
+.toggle-slider::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(10, 18, 31, 0.18);
+  transition: transform 0.18s ease;
+}
+
+.toggle input:checked + .toggle-slider {
+  background: rgba(255, 122, 60, 0.5);
+}
+
+.toggle input:checked + .toggle-slider::after {
+  transform: translateX(20px);
+}
+
+.info-btn {
+  margin-top: 4px;
+  color: var(--muted);
+  background: rgba(255, 159, 122, 0.1);
+}
+
+.modal-overlay {
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.modal-overlay.modal-open {
+  opacity: 1;
+}
+
+.modal-box {
+  width: 100%;
+  max-height: 84vh;
+  padding: 24px 18px 34px;
+  border-radius: 28px 28px 0 0;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 0.32s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.modal-overlay.modal-open .modal-box {
+  transform: translateY(0);
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.modal-body {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.info-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+}
+
+.info-row strong {
+  display: block;
+  color: var(--ink);
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.info-row p,
+.info-row code {
+  color: var(--muted-dark);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.empty-state {
+  padding: 40px 22px;
+  border: 1px dashed rgba(255, 159, 122, 0.35);
+  border-radius: 24px;
+  background: rgba(255, 159, 122, 0.05);
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.days-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.load-more-btn {
+  align-self: center;
+  margin-top: 12px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 159, 122, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 159, 122, 0.1);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#toast {
+  position: fixed;
+  bottom: calc(var(--nav-height) + 18px + var(--safe-bottom));
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(92, 58, 46, 0.9);
+  color: #FFF4E6;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  z-index: 400;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+#toast.toast-error {
+  background: rgba(160, 40, 20, 0.94);
+  border: 1px solid rgba(220, 80, 50, 0.3);
+}

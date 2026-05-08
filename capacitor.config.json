@@ -1,0 +1,15 @@
+{
+  "appId": "com.noronaru.innerweather",
+  "appName": "InnerWeather",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_launcher",
+      "iconColor": "#212121",
+      "sound": "default"
+    }
+  }
+}

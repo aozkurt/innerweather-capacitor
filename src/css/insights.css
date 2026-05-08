@@ -1,0 +1,374 @@
+.weather-stats {
+  display: grid;
+  gap: 12px;
+}
+
+.weather-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.weather-stat-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.weather-stat-mood {
+  color: var(--muted-dark);
+  font-size: 14px;
+}
+
+.weather-stat-mood strong {
+  color: var(--ink);
+}
+
+.weather-stat-freq {
+  color: var(--muted-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ── Insights: shared card title (sits on light wrapper-card) ────────────── */
+.insight-card-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted-dark);
+  margin-bottom: 16px;
+}
+
+/* ── Summary stat chips (dark glass style, own background) ───────────────── */
+.stat-chips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.stat-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 7px;
+  padding: 18px 8px 16px;
+  background: linear-gradient(150deg, rgba(255, 159, 122, 0.22), rgba(255, 214, 165, 0.16));
+  border: 1px solid rgba(255, 159, 122, 0.3);
+  border-radius: 22px;
+  box-shadow: var(--shadow-md);
+}
+
+.stat-chip-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--accent);
+}
+
+.stat-chip-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stat-chip-label {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Mood distribution (on light wrapper-card) ───────────────────────────── */
+.mood-dist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.mood-dist-row {
+  display: grid;
+  grid-template-columns: 46px 1fr 34px;
+  align-items: center;
+  gap: 10px;
+}
+
+.mood-dist-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted-dark);
+}
+
+.mood-dist-track {
+  height: 8px;
+  border-radius: 99px;
+  background: rgba(92, 58, 46, 0.08);
+  overflow: hidden;
+}
+
+.mood-dist-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.mood-dist-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted-dark);
+  text-align: right;
+}
+
+/* ── Momentum card (on light wrapper-card) ───────────────────────────────── */
+.momentum-empty {
+  font-size: 14px;
+  color: var(--muted-dark);
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+.momentum-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 0 14px;
+}
+
+.momentum-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.momentum-num {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.momentum-sub {
+  font-size: 11px;
+  color: var(--muted-dark);
+  font-weight: 600;
+}
+
+.momentum-arrow {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.momentum-trend {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+
+.momentum-up   { color: #2ea040; }
+.momentum-down { color: #d94a1e; }
+.momentum-flat { color: var(--muted-dark); }
+
+/* ── Season averages (on light wrapper-card) ─────────────────────────────── */
+.season-avg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.season-avg-row {
+  display: grid;
+  grid-template-columns: 22px 58px 1fr 38px;
+  align-items: center;
+  gap: 10px;
+}
+
+.season-avg-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--muted-dark);
+}
+
+.season-avg-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted-dark);
+}
+
+.season-avg-track {
+  height: 8px;
+  border-radius: 99px;
+  background: rgba(92, 58, 46, 0.08);
+  overflow: hidden;
+}
+
+.season-avg-fill {
+  height: 100%;
+  border-radius: 99px;
+  opacity: 0.82;
+  transition: width 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.season-avg-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: right;
+}
+
+/* ── Weather insight card (on light wrapper-card) ────────────────────────── */
+.weather-insight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.weather-insight-row {
+  display: grid;
+  grid-template-columns: 22px 62px 1fr 46px;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-insight-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--muted-dark);
+}
+
+.weather-insight-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted-dark);
+}
+
+.weather-insight-track {
+  height: 8px;
+  border-radius: 99px;
+  background: rgba(92, 58, 46, 0.08);
+  overflow: hidden;
+}
+
+.weather-insight-fill {
+  height: 100%;
+  border-radius: 99px;
+  opacity: 0.8;
+  transition: width 0.55s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+
+.weather-insight-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.weather-insight-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.weather-insight-freq {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted-dark);
+  letter-spacing: 0.03em;
+}
+
+/* ── Memorable days highlight pair (on light wrapper-card) ───────────────── */
+.highlight-pair-card {
+  padding: 18px 16px 20px;
+}
+
+.highlight-pair {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  min-height: 140px;
+}
+
+.highlight-divider {
+  background: rgba(92, 58, 46, 0.08);
+}
+
+.highlight-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.highlight-side:active {
+  background: rgba(255, 159, 122, 0.08);
+}
+
+.highlight-empty {
+  font-size: 12px;
+  color: var(--muted-dark);
+}
+
+.highlight-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.highlight-best  .highlight-tag { color: #2ea040; }
+.highlight-worst .highlight-tag { color: #d94a1e; }
+
+.highlight-score {
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.highlight-score-sub {
+  font-size: 11px;
+  color: var(--muted-dark);
+  font-weight: 600;
+  margin-top: -2px;
+}
+
+.highlight-wx {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted-dark);
+  margin-top: 6px;
+}
+
+.highlight-wx-icon svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--muted-dark);
+}
+
+.highlight-date {
+  font-size: 10px;
+  color: var(--muted-dark);
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 2px;
+}

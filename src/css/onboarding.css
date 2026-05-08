@@ -1,0 +1,216 @@
+/* ── Onboarding overlay ───────────────────────────────────────────────────── */
+
+.ob-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* force light palette — onboarding always uses warm light design */
+  --ob-text:   #5C3A2E;
+  --ob-muted:  #A0694E;
+  --ob-accent: #E8673C;
+
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.40s ease, transform 0.40s ease;
+}
+
+.ob-overlay--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ob-overlay--exit {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 0.46s ease, transform 0.46s ease;
+}
+
+/* ── Carousel track ───────────────────────────────────────────────────────── */
+
+.ob-track {
+  display: flex;
+  flex: 1;
+  transition: transform 0.44s cubic-bezier(0.32, 0.72, 0, 1);
+  will-change: transform;
+}
+
+/* ── Individual slide ─────────────────────────────────────────────────────── */
+
+.ob-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  flex-shrink: 0;
+  padding: 40px 36px 0;
+  gap: 36px;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+
+.ob-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+/* Soft radial glow behind the card */
+.ob-glow {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--slide-glow) 0%, transparent 70%);
+  animation: ob-breathe 3.2s ease-in-out infinite;
+}
+
+@keyframes ob-breathe {
+  0%, 100% { transform: scale(1);    opacity: 1;   }
+  50%       { transform: scale(1.14); opacity: 0.6; }
+}
+
+/* Frosted glass card */
+.ob-icon-box {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128px;
+  height: 128px;
+  border-radius: 38px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.90);
+  box-shadow:
+    0 24px 64px rgba(92, 58, 46, 0.14),
+    0 4px  16px rgba(92, 58, 46, 0.07);
+
+  /* Default state — slightly smaller before slide enters view */
+  transform: scale(0.82);
+  opacity: 0.55;
+  transition: transform 0.50s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity   0.40s ease;
+}
+
+/* Active slide pops its icon card to full size */
+.ob-slide--active .ob-icon-box {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.ob-svg {
+  width: 62px;
+  height: 62px;
+  color: var(--slide-color);
+}
+
+/* ── Text ─────────────────────────────────────────────────────────────────── */
+
+.ob-text {
+  text-align: center;
+}
+
+.ob-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--ob-text);
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+  margin-bottom: 14px;
+}
+
+.ob-sub {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ob-muted);
+  line-height: 1.65;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* ── Bottom actions ───────────────────────────────────────────────────────── */
+
+.ob-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 28px;
+  padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(0deg, rgba(255, 250, 242, 0.97) 55%, transparent 100%);
+}
+
+/* Skip */
+.ob-skip {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ob-muted);
+  background: none;
+  border: none;
+  padding: 10px 4px;
+  cursor: pointer;
+  min-width: 52px;
+  transition: opacity 0.22s ease;
+}
+
+/* Next / Get Started */
+.ob-next {
+  padding: 13px 26px;
+  background: linear-gradient(160deg, #FF9F7A, #E8673C);
+  color: #FFF4E6;
+  font-size: 15px;
+  font-weight: 800;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  min-width: 110px;
+  box-shadow: 0 10px 28px rgba(232, 103, 60, 0.32);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, padding 0.28s ease,
+              border-radius 0.28s ease, min-width 0.28s ease;
+}
+
+.ob-next:active {
+  transform: scale(0.96);
+  box-shadow: 0 4px 12px rgba(232, 103, 60, 0.20);
+}
+
+/* Final slide — button grows slightly */
+.ob-next--final {
+  padding: 15px 34px;
+  border-radius: 18px;
+  min-width: 148px;
+  box-shadow: 0 14px 36px rgba(232, 103, 60, 0.38);
+}
+
+/* ── Dot indicators ───────────────────────────────────────────────────────── */
+
+.ob-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.ob-dot {
+  height: 7px;
+  width: 7px;
+  border-radius: 99px;
+  background: rgba(92, 58, 46, 0.18);
+  transition: width 0.30s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.30s ease,
+              border-radius 0.30s ease;
+}
+
+.ob-dot--active {
+  width: 24px;
+  background: var(--ob-accent);
+}

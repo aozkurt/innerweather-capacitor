@@ -1,0 +1,150 @@
+.hero-card,
+.wrapper-card,
+.day-card,
+.season-card {
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-card {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 20px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 159, 122, 0.28);
+  border-radius: 30px;
+  background: rgba(255, 214, 165, 0.35);
+}
+
+.hero-title,
+.screen-title {
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.hero-text,
+.screen-subtitle {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.hero-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-icon {
+  width: 92px;
+  height: 92px;
+  color: #C1502A;
+}
+
+.day-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+  margin: 10px 0;
+  min-height: 84px;
+  border: 1px solid rgba(255, 159, 122, 0.18);
+  border-radius: 28px;
+  background: rgba(255, 248, 240, 0.97);
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.day-card:active,
+.season-card:active,
+.weather-btn:active,
+.save-btn:active,
+.backup-btn:active,
+.ai-btn:active {
+  transform: scale(0.98);
+}
+
+.featured-card {
+  background: rgba(255, 244, 230, 0.97);
+  border-color: rgba(255, 159, 122, 0.3);
+}
+
+.day-card-main {
+  min-width: 0;
+}
+
+.day-card-date {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.day-card-meta {
+  margin-top: 5px;
+  color: var(--muted-dark);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.day-card-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+}
+
+.day-card-edit,
+.day-card-mood,
+.day-card-weather,
+.season-emoji,
+.weather-stat-name .icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-card-edit .app-icon,
+.mood-icon,
+.weather-card-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.day-card-mood,
+.day-card-weather {
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  background: rgba(255, 159, 122, 0.14);
+}
+
+.wrapper-card {
+  background: linear-gradient(160deg, rgba(255, 248, 240, 0.97), rgba(255, 236, 214, 0.92));
+  border: 1px solid rgba(255, 159, 122, 0.2);
+  border-radius: 28px;
+  padding: 14px;
+  margin: 10px 0;
+}
+
+.icon-badge {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  background: rgba(255, 159, 122, 0.24);
+  color: var(--accent-deep);
+  flex-shrink: 0;
+}
+
+.icon-badge .app-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,50 @@
+#screen-root {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.screen-scroll {
+  height: 100%;
+  overflow-y: auto;
+  padding: 8px 18px calc(22px + var(--safe-bottom));
+  -webkit-overflow-scrolling: touch;
+}
+
+.screen-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.loading-spinner {
+  width: 42px;
+  height: 42px;
+  border: 3px solid rgba(255, 255, 255, 0.14);
+  border-top-color: var(--accent-soft);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.screen-header {
+  margin: 2px 0 10px;
+}
+
+.screen-title {
+  margin-top: 8px;
+}
+
+.eyebrow,
+.section-kicker {
+  display: inline-block;
+  color: #C1502A;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-kicker {
+  margin: 10px 0 10px;
+}

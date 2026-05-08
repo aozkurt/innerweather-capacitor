@@ -1,0 +1,384 @@
+.editor-screen {
+  padding-top: 8px;
+}
+
+.editor-header {
+  margin-bottom: 14px;
+}
+
+.editor-date {
+  margin-top: 8px;
+  color: var(--text);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.editor-panel {
+  padding: 18px;
+}
+
+.editor-panel-title {
+  color: var(--muted-dark);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.editor-mood-label {
+  margin: 12px 0 6px;
+  color: var(--ink);
+  font-size: 32px;
+  font-weight: 800;
+}
+
+/* Mood slider — red (low) → green (high) */
+.mood-slider {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(225, 32, 37, 0.4), rgba(58, 181, 74, 0.4));
+  outline: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.mood-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 4px 12px rgba(232, 103, 60, 0.3);
+}
+
+/* ── Weather strip (horizontal scroll) ───────────────────────────────────── */
+
+.weather-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 0 14px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.weather-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.weather-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 80px;
+  padding: 14px 10px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 22px;
+  background: var(--surface-soft);
+  color: var(--text);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+
+.weather-chip:active {
+  transform: scale(0.95);
+}
+
+.weather-chip.selected {
+  border-color: var(--accent);
+  background: rgba(255, 159, 122, 0.18);
+}
+
+.weather-chip-svg {
+  width: 28px;
+  height: 28px;
+}
+
+.weather-chip-name {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ── Voice note section ───────────────────────────────────────────────────── */
+
+.voice-section {
+  margin-bottom: 12px;
+}
+
+/* Idle: mic button */
+.voice-mic-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 22px 16px;
+  border: 1.5px dashed var(--line-strong);
+  border-radius: 22px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+.voice-mic-btn:active {
+  background: rgba(255, 159, 122, 0.14);
+  border-color: var(--accent);
+}
+
+.voice-mic-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--accent-deep);
+}
+
+.voice-mic-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Recording state */
+.voice-recording-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1.5px solid rgba(225, 32, 37, 0.32);
+  border-radius: 22px;
+  background: rgba(225, 32, 37, 0.06);
+}
+
+.voice-rec-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #E12025;
+  flex-shrink: 0;
+  animation: voice-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes voice-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.4; transform: scale(0.65); }
+}
+
+.voice-rec-timer {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 800;
+  color: #E12025;
+}
+
+.voice-stop-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid rgba(225, 32, 37, 0.30);
+  border-radius: 14px;
+  background: rgba(225, 32, 37, 0.10);
+  color: #E12025;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.16s ease;
+}
+
+.voice-btn-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Player state */
+.voice-player-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 22px;
+  background: var(--surface-soft);
+}
+
+.voice-play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.16s ease;
+}
+
+.voice-play-btn:active {
+  transform: scale(0.92);
+}
+
+.voice-progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+}
+
+.voice-progress-bar {
+  width: 100%;
+  height: 4px;
+  border-radius: 99px;
+  background: rgba(255, 159, 122, 0.25);
+  overflow: hidden;
+}
+
+.voice-progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--accent-deep);
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.voice-time-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.voice-delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(225, 32, 37, 0.22);
+  border-radius: 10px;
+  background: rgba(225, 32, 37, 0.07);
+  color: #E12025;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.16s ease;
+}
+
+/* ── Shared styles ────────────────────────────────────────────────────────── */
+
+.note-textarea {
+  width: 100%;
+  min-height: 180px;
+  margin: 6px 0 18px;
+  padding: 16px 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: 24px;
+  background: rgba(255, 244, 230, 0.6);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  resize: none;
+  outline: none;
+}
+
+.note-textarea::placeholder {
+  color: rgba(160, 105, 78, 0.5);
+}
+
+.save-btn,
+.backup-btn,
+.ai-btn {
+  width: 100%;
+  border: 0;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.16s ease, opacity 0.16s ease, box-shadow 0.16s ease;
+}
+
+.save-btn {
+  padding: 16px 18px;
+  background: linear-gradient(180deg, #FF9F7A, #E8673C);
+  color: #FFF4E6;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 12px 28px rgba(232, 103, 60, 0.3);
+}
+
+.save-btn:disabled,
+.ai-btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.backup-btn {
+  padding: 14px 18px;
+  background: linear-gradient(180deg, rgba(255, 214, 165, 0.6), rgba(255, 196, 138, 0.55));
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 800;
+  border: 1px solid rgba(255, 159, 122, 0.28);
+}
+
+.backup-btn.danger-btn {
+  background: linear-gradient(180deg, rgba(220, 80, 50, 0.12), rgba(180, 50, 30, 0.16));
+  border-color: rgba(220, 80, 50, 0.3);
+  color: #B83320;
+}
+
+.ai-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: linear-gradient(160deg, rgba(255, 159, 122, 0.22), rgba(255, 214, 165, 0.18));
+  color: #C1502A;
+  border: 1px solid rgba(255, 159, 122, 0.35);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.ai-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 4px;
+}
+
+.ai-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.brain-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.ai-insight-modal-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 20px;
+  max-height: 52vh;
+  overflow-y: auto;
+}
+
+.ai-info-btn--active {
+  background: rgba(255, 122, 60, 0.16);
+  color: #C1502A;
+  border: 1px solid rgba(255, 122, 60, 0.42);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}

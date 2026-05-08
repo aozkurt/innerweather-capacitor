@@ -1,0 +1,215 @@
+[data-theme="dark"] {
+  --bg:             #1A0E08;
+  --bg-top:         #110905;
+  --surface:        rgba(255, 159, 122, 0.09);
+  --surface-strong: rgba(255, 159, 122, 0.16);
+  --surface-soft:   rgba(255, 159, 122, 0.07);
+  --text:           #FFF4E6;
+  --muted:          #C4906B;
+  --muted-dark:     #E8C9A8;
+  --ink:            #FFF4E6;
+  --line:           rgba(255, 159, 122, 0.14);
+  --line-strong:    rgba(255, 159, 122, 0.24);
+  --accent:         #FF9F7A;
+  --accent-deep:    #FF7A52;
+  --accent-soft:    #FFD6A5;
+  --success:        #5DCF90;
+  --shadow-lg:      0 24px 60px rgba(0, 0, 0, 0.55);
+  --shadow-md:      0 14px 32px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse at top right, rgba(255, 120, 80, 0.10), transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(255, 159, 122, 0.06), transparent 55%),
+    var(--bg);
+}
+
+[data-theme="dark"] body::before {
+  background-image:
+    linear-gradient(rgba(255, 159, 122, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 159, 122, 0.04) 1px, transparent 1px);
+  opacity: 0.18;
+}
+
+/* Appbar + nav */
+[data-theme="dark"] #appbar {
+  background: rgba(26, 14, 8, 0.94);
+}
+
+[data-theme="dark"] #bottom-nav {
+  background: rgba(26, 14, 8, 0.94);
+}
+
+/* Icon buttons */
+[data-theme="dark"] .icon-btn {
+  background: rgba(255, 159, 122, 0.10);
+}
+
+[data-theme="dark"] .header-btn {
+  border-color: rgba(255, 159, 122, 0.16);
+}
+
+/* Nav active pill */
+[data-theme="dark"] .nav-btn.active {
+  background: linear-gradient(180deg, rgba(255, 159, 122, 0.18), rgba(255, 159, 122, 0.06));
+  color: var(--accent);
+}
+
+/* Eyebrows / kickers */
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] .section-kicker {
+  color: var(--accent-deep);
+}
+
+/* Hero card */
+[data-theme="dark"] .hero-card {
+  background: rgba(255, 159, 122, 0.10);
+  border-color: rgba(255, 159, 122, 0.14);
+}
+
+[data-theme="dark"] .hero-icon {
+  color: var(--accent);
+}
+
+/* Day cards */
+[data-theme="dark"] .day-card {
+  background: rgba(32, 18, 10, 0.97);
+  border-color: rgba(255, 159, 122, 0.11);
+}
+
+[data-theme="dark"] .featured-card {
+  background: rgba(38, 22, 12, 0.97);
+  border-color: rgba(255, 159, 122, 0.18);
+}
+
+/* Wrapper / insight cards */
+[data-theme="dark"] .wrapper-card {
+  background: linear-gradient(160deg, rgba(38, 22, 12, 0.97), rgba(28, 15, 8, 0.97));
+  border-color: rgba(255, 159, 122, 0.13);
+}
+
+/* Day view cards */
+[data-theme="dark"] .stat-pill,
+[data-theme="dark"] .day-view-note-box,
+[data-theme="dark"] .day-audio-player {
+  background: linear-gradient(160deg, rgba(38, 22, 12, 0.97), rgba(28, 15, 8, 0.97));
+  border-color: rgba(255, 159, 122, 0.13);
+}
+
+/* Icon badges */
+[data-theme="dark"] .icon-badge {
+  background: rgba(255, 159, 122, 0.20);
+  color: var(--accent);
+}
+
+/* Stat chips */
+[data-theme="dark"] .stat-chip {
+  background: linear-gradient(150deg, rgba(255, 159, 122, 0.14), rgba(255, 214, 165, 0.07));
+  border-color: rgba(255, 159, 122, 0.18);
+}
+
+/* Progress tracks */
+[data-theme="dark"] .mood-dist-track,
+[data-theme="dark"] .season-avg-track,
+[data-theme="dark"] .weather-insight-track {
+  background: rgba(255, 159, 122, 0.11);
+}
+
+/* Highlight divider */
+[data-theme="dark"] .highlight-divider {
+  background: rgba(255, 159, 122, 0.11);
+}
+
+/* Weather chips (horizontal strip) */
+[data-theme="dark"] .weather-chip {
+  background: rgba(32, 18, 10, 0.70);
+  border-color: rgba(255, 159, 122, 0.14);
+}
+
+[data-theme="dark"] .weather-chip.selected {
+  background: rgba(255, 159, 122, 0.16);
+  border-color: rgba(255, 122, 60, 0.50);
+}
+
+/* Voice note UI */
+[data-theme="dark"] .voice-mic-btn {
+  background: rgba(32, 18, 10, 0.50);
+  border-color: rgba(255, 159, 122, 0.22);
+}
+
+[data-theme="dark"] .voice-player-row {
+  background: rgba(32, 18, 10, 0.70);
+  border-color: rgba(255, 159, 122, 0.18);
+}
+
+[data-theme="dark"] .voice-progress-bar {
+  background: rgba(255, 159, 122, 0.14);
+}
+
+/* Note textarea */
+[data-theme="dark"] .note-textarea {
+  background: rgba(32, 18, 10, 0.60);
+}
+
+[data-theme="dark"] .note-textarea::placeholder {
+  color: rgba(196, 144, 107, 0.45);
+}
+
+/* Settings + modals */
+[data-theme="dark"] .settings-overlay,
+[data-theme="dark"] .modal-overlay {
+  background: rgba(0, 0, 0, 0.60);
+}
+
+[data-theme="dark"] .settings-panel,
+[data-theme="dark"] .modal-box {
+  background: linear-gradient(180deg, rgba(38, 22, 12, 0.99), rgba(26, 14, 8, 0.99));
+  border-color: rgba(255, 159, 122, 0.18);
+}
+
+/* Buttons */
+[data-theme="dark"] .backup-btn {
+  background: linear-gradient(180deg, rgba(255, 214, 165, 0.12), rgba(255, 159, 122, 0.09));
+  border-color: rgba(255, 159, 122, 0.20);
+}
+
+[data-theme="dark"] .backup-btn.danger-btn {
+  color: #FF7060;
+  border-color: rgba(220, 80, 50, 0.35);
+}
+
+[data-theme="dark"] .ai-btn {
+  background: linear-gradient(160deg, rgba(255, 159, 122, 0.14), rgba(255, 214, 165, 0.09));
+  color: var(--accent);
+  border-color: rgba(255, 159, 122, 0.28);
+}
+
+[data-theme="dark"] .ai-info-btn--active {
+  background: rgba(255, 122, 60, 0.13);
+  color: var(--accent);
+  border-color: rgba(255, 122, 60, 0.34);
+}
+
+[data-theme="dark"] .load-more-btn {
+  background: rgba(255, 159, 122, 0.10);
+  border-color: rgba(255, 159, 122, 0.20);
+}
+
+/* Empty state */
+[data-theme="dark"] .empty-state {
+  background: rgba(255, 159, 122, 0.04);
+  border-color: rgba(255, 159, 122, 0.18);
+}
+
+/* Toast */
+[data-theme="dark"] #toast {
+  background: rgba(32, 18, 10, 0.96);
+}
+
+/* ── View Transition — smooth theme crossfade ───────────────────────────────── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.38s;
+  animation-timing-function: ease;
+}

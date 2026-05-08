@@ -1,0 +1,150 @@
+.day-view {
+  border-radius: 0;
+}
+
+/* ── Weather icon badge ───────────────────────────────────────────────────── */
+
+.day-view-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+}
+
+.day-weather-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 108px;
+  height: 108px;
+  margin: 10px 0 20px;
+  border-radius: 32px;
+  background: var(--surface-strong);
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.day-weather-svg {
+  width: 58px;
+  height: 58px;
+  color: var(--accent-deep);
+}
+
+/* ── Stats row ────────────────────────────────────────────────────────────── */
+
+.day-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.stat-pill {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(160deg, rgba(255, 248, 240, 0.97), rgba(255, 236, 214, 0.92));
+  box-shadow: var(--shadow-md);
+}
+
+.stat-label {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+/* ── Kicker + note box ────────────────────────────────────────────────────── */
+
+.day-view-kicker {
+  margin-top: 22px;
+}
+
+.day-view-note-box {
+  min-height: 180px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(160deg, rgba(255, 248, 240, 0.97), rgba(255, 236, 214, 0.92));
+  box-shadow: var(--shadow-md);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ── Audio player ─────────────────────────────────────────────────────────── */
+
+.day-audio-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(160deg, rgba(255, 248, 240, 0.97), rgba(255, 236, 214, 0.92));
+  box-shadow: var(--shadow-md);
+}
+
+.day-audio-play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: var(--surface-strong);
+  color: var(--accent-deep);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+
+.day-audio-play-btn:active {
+  transform: scale(0.92);
+  background: var(--accent-soft);
+}
+
+.day-audio-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.day-audio-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.day-audio-progress {
+  width: 100%;
+  height: 4px;
+  border-radius: 99px;
+  background: var(--line-strong);
+  overflow: hidden;
+}
+
+.day-audio-progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--accent-deep);
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.day-audio-time {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
